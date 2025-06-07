@@ -73,8 +73,8 @@ A modern Laravel 12 + Livewire application with Flux UI components.
    * **Seed initial data** (admin account + sample posts):
 
      ```bash
-     php artisan db:seed --class=AdminSeeder
-     php artisan db:seed --class=PostSeeder
+     php artisan db:seed AdminSeeder
+     php artisan db:seed PostSeeder
      ```
 
 5. **Build frontend assets**
@@ -84,13 +84,6 @@ A modern Laravel 12 + Livewire application with Flux UI components.
      ```bash
      npm run build
      ```
-   * **Development** (with file watcher):
-
-     ```bash
-     npm run dev
-     ```
-
-6. **Serve the application**
 
 
 ---
