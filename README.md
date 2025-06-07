@@ -90,4 +90,4 @@ A modern Laravel 12 + Livewire application with Flux UI components.
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+This project is licensed under the **MIT License**.
