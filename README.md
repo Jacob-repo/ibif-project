@@ -50,7 +50,7 @@ A modern Laravel 12 + Livewire application with Flux UI components.
      MAIL_FROM_ADDRESS=your_from_address@example.com
      MAIL_FROM_NAME="${APP_NAME}"
 
-     # Admin account (used by UserSeeder)
+     # Admin account (used by AdminSeeder)
      ADMIN_EMAIL=admin@example.com
      ADMIN_PASSWORD=ChangeMe123!
      ```
