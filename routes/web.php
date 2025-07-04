@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WysiwygController;
 use Livewire\Volt\Volt;
 use App\Models\Post;
+use App\Models\WysiwygContent;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -21,9 +22,10 @@ Route::post('/wysiwyg/save', [WysiwygController::class, 'save'])
 
 Route::get('dashboard', function () {
     $name = Auth::user()->name;
-    return view('dashboard', ['name' => $name]);
-})->middleware(['auth', 'verified'])
-  ->name('dashboard');
+    $content = WysiwygContent::latest()->first()?->content ?? '';
+    return view('dashboard', ['name' => $name, 'content' => $content,]);
+    })->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::view('admin/dashboard', 'admin.dashboard')
     ->middleware(['auth', 'verified', 'admin'])
