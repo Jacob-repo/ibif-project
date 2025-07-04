@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WysiwygController;
 use Livewire\Volt\Volt;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
@@ -11,12 +12,15 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::view('wysiwyg', 'wysiwyg')
+Route::get('/wysiwyg', [WysiwygController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('wysiwyg');
 
+Route::post('/wysiwyg/save', [WysiwygController::class, 'save'])
+    ->middleware(['auth', 'verified']);
+
 Route::get('dashboard', function () {
-    $name = Auth::user()->name; 
+    $name = Auth::user()->name;
     return view('dashboard', ['name' => $name]);
 })->middleware(['auth', 'verified'])
   ->name('dashboard');
